@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Check</title>
+            <meta charset="utf-8">
+            <style>
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: white;
+                    background-color: #111111;
+                }
+                h1 {
+                    text-align: center;
+                    color: rgb(241, 207, 11);
+                }
+                div {
+                    margin:auto;
+                    background-color:rgb(62, 64, 70);
+                    padding: 1%;
+                    padding-left: 2%;
+                    padding-right: 2%;
+                    width: 800px;
+                    color: whitesmoke;
+                    border-radius: 10px;
+                }
+                #bcalcular {
+                    text-align: center;
+                }
+                header {
+                    text-align: center;
+                    background-color: rgb(144,145,148);
+                    margin: 0px;
+                }
+                #bcalcular {
+                    color:whitesmoke;
+                    background-color: rgb(190, 28, 28);
+                    border-radius: 5px;
+                    border-color: rgb(190, 28, 28);
+                }
+                label {
+                    font-size: 16px;
+                }
+
+                #result, #hrest, #htotal {
+                    width: 30px;
+                }
+                footer {
+                    text-align: center;
+                    margin-top: 10px;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Checar quantas horas já estudei</h1>
+            <div>
+                <input id="curso1"  type="checkbox" value="on"/>
+                <label>1-Boas-vindas ao Bootcamp Santander Fullstack Developer - 1 hora</label><br>
+                <input id="curso2"  type="checkbox" value="on"/>
+                <label>2-Bem-vindo à DIO - 1 hora</label><br>
+                <input id="curso3"  type="checkbox" value="on"/>
+                <label>3-Lógica de programação essencial - 4 horas</label><br>
+                <input id="curso4"  type="checkbox" value="on"/>
+                <label>4-Introdução ao Git e ao GitHub - 5 horas</label><br>
+                <input id="curso5"  type="checkbox" value="on"/>
+                <label>5-Conceitos e melhores práticas com bancos de dados PostgreSQL - 9 horas</label><br>
+                <input id="curso6"  type="checkbox" value="on"/>
+                <label>6-Desenvolvimento básico em Java - 9 horas</label><br>
+                <input id="curso7"  type="checkbox" value="on"/>
+                <label>7-Desenvolvimento avançado em Java - 8 horas</label><br>
+                <input id="curso8"  type="checkbox" value="on"/>
+                <label>8-Aprenda o que são Estruturas de Dados e Algoritmos - 2 horas</label><br>
+                <input id="curso9"  type="checkbox" value="on"/>
+                <label>9-Implementando Collections e Streams com Java - 6 horas</label><br>
+                <input id="curso10"  type="checkbox" value="on"/>
+                <label>10-Resolvendo Desafios de Código em Java - 1 hora</label><br>
+                <input id="curso11"  type="checkbox" value="on"/>
+                <label>11-Primeiros passos em Java - 1 hora</label><br>
+                <input id="curso12"  type="checkbox" value="on"/>
+                <label>12-Trabalhando com Banco de Dados utilizando JDBC e JPA - 4 horas</label><br>
+                <input id="curso13"  type="checkbox" value="on"/>
+                <label>13Introdução ao framework Spring Boot - 2 horas</label><br>
+                <input id="curso14"  type="checkbox" value="on"/>
+                <label>14-Construindo um sistema de controle de ponto e acesso com Spring Boot - 6 horas</label><br>
+                <input id="curso15"  type="checkbox" value="on"/>
+                <label>15-Desenvolvendo um sistema de gerenciamento de pessoas em API REST com Spring Boot - 6 horas</label><br>
+                <input id="curso16"  type="checkbox" value="on"/>
+                <label>16-Contruindo um projeto com arquitetura baseada em microsserviços usando Spring Cloud - 4 horas</label><br>
+                <input id="curso17"  type="checkbox" value="on"/>
+                <label>17-Desafios numéricos em Java - 1 hora</label><br>
+                <input id="curso18"  type="checkbox" value="on"/>
+                <label>18-Introdução a criação de websites com HTML5 e CSS3 - 6 horas</label><br>
+                <input id="curso19"  type="checkbox" value="on"/>
+                <label>19-Introdução ao Angular 8 - 5 horas</label><br>
+                <input id="curso20"  type="checkbox" value="on"/>
+                <label>20-Técnicas avançadas em Angular 8 - 8 horas</label><br>
+                <input id="curso21"  type="checkbox" value="on"/>
+                <label>21-Aplicações avançadas com Angular - 6 horas</label><br>
+                <input id="curso22"  type="checkbox" value="on"/>
+                <label>22-Solucionando Desafios em Java - 1 hora</label><br>
+                <input id="curso23"  type="checkbox" value="on"/>
+                <label>23-Crie seu gerenciador de salas de reuniões com Java e Angular - 6 horas</label><br>
+                <fieldset>
+                    <input id="bcalcular" type="button" onclick="somarhoras()" value="Calcular"/>
+                    <label>Horas estudadas:</label>
+                    <input type="text" id="result" value=""/>
+                    <label>Horas restantes:</label>
+                    <input type="text" id="hrest" value=""/>
+                    <label>Horas total:</label>
+                    <input type="text" id="htotal" value="102"/>
+                </fieldset>
+            </div>
+            <footer>Obs.: Para novo cálculo atualizar a página(F5).</footer>
+
+            <script>
+                var horas1 = document.getElementById("curso1");
+                var horas2 = document.getElementById("curso2");
+                var horas3 = document.getElementById("curso3");
+                var horas4 = document.getElementById("curso4");
+                var horas5 = document.getElementById("curso5");
+                var horas6 = document.getElementById("curso6");
+                var horas7 = document.getElementById("curso7");
+                var horas8 = document.getElementById("curso8");
+                var horas9 = document.getElementById("curso9");
+                var horas10 = document.getElementById("curso10");
+                var horas11 = document.getElementById("curso11");
+                var horas12 = document.getElementById("curso12");
+                var horas13 = document.getElementById("curso13");
+                var horas14 = document.getElementById("curso14");
+                var horas15 = document.getElementById("curso15");
+                var horas16 = document.getElementById("curso16");
+                var horas17 = document.getElementById("curso17");
+                var horas18 = document.getElementById("curso18");
+                var horas19 = document.getElementById("curso19");
+                var horas20 = document.getElementById("curso20");
+                var horas21 = document.getElementById("curso21");
+                var horas22 = document.getElementById("curso22");
+                var horas23 = document.getElementById("curso23");
+
+
+                function somarhoras(){
+                    if (horas1.checked) {
+                        horas1 = 1;
+                    }
+                    else {
+                        horas1 = 0;
+                    }
+
+                    if (horas2.checked) {
+                        horas2 = 1;
+                    }
+                    else {
+                        horas2 = 0;
+                    }
+
+                    if (horas3.checked) {
+                        horas3 = 4;
+                    }
+                    else {
+                        horas3 = 0;
+                    }
+
+                    if (horas4.checked) {
+                        horas4 = 5;
+                    }
+                    else {
+                        horas4 = 0;
+                    }
+
+                    if (horas5.checked) {
+                        horas5 = 9;
+                    }
+                    else {
+                        horas5 = 0;
+                    }
+
+                    if (horas6.checked) {
+                        horas6 = 9;
+                    }
+                    else {
+                        horas6 = 0;
+                    }
+                    
+                    if (horas7.checked) {
+                        horas7 = 8;
+                    }
+                    else {
+                        horas7 = 0;
+                    }
+
+                    if (horas8.checked) {
+                        horas8 = 2;
+                    }
+                    else {
+                        horas8 = 0;
+                    }
+
+                    if (horas9.checked) {
+                        horas9 = 6;
+                    }
+                    else {
+                        horas9 = 0;
+                    }
+
+                    if (horas10.checked) {
+                        horas10 = 1;
+                    }
+                    else {
+                        horas10 = 0;
+                    }
+
+                    if (horas11.checked) {
+                        horas11 = 1;
+                    }
+                    else {
+                        horas11 = 0;
+                    }
+
+                    if (horas12.checked) {
+                        horas12 = 4;
+                    }
+                    else {
+                        horas12 = 0;
+                    }
+
+                    if (horas13.checked) {
+                        horas13 = 2;
+                    }
+                    else {
+                        horas13 = 0;
+                    }
+
+                    if (horas14.checked) {
+                        horas14 = 6;
+                    }
+                    else {
+                        horas14 = 0;
+                    }
+
+                    if (horas15.checked) {
+                        horas15 = 6;
+                    }
+                    else {
+                        horas15 = 0;
+                    }
+
+                    if (horas16.checked) {
+                        horas16 = 4;
+                    }
+                    else {
+                        horas16 = 0;
+                    }
+
+                    if (horas17.checked) {
+                        horas17 = 1;
+                    }
+                    else {
+                        horas17 = 0;
+                    }
+
+                    if (horas18.checked) {
+                        horas18 = 6;
+                    }
+                    else {
+                        horas18 = 0;
+                    }
+
+                    if (horas19.checked) {
+                        horas19 = 5;
+                    }
+                    else {
+                        horas19 = 0;
+                    }
+
+                    if (horas20.checked) {
+                        horas20 = 8;
+                    }
+                    else {
+                        horas20 = 0;
+                    }
+
+                    if (horas21.checked) {
+                        horas21 = 6;
+                    }
+                    else {
+                        horas21 = 0;
+                    }
+
+                    if (horas22.checked) {
+                        horas22 = 1;
+                    }
+                    else {
+                        horas22 = 0;
+                    }
+
+                    if (horas23.checked) {
+                        horas23 = 6;
+                    }
+                    else {
+                        horas23 = 0;
+                    }
+
+                   
+
+                    totalhoras = horas1 + horas2 + horas3 + horas4 + horas5 + horas6 + horas7 + horas8 + horas9 + horas10 +
+                                 horas11 + horas12 + horas13 + horas14 + horas15 + horas16 + horas17 + horas18 + horas19 +
+                                 horas20 + horas21 + horas22 + horas23;
+                    document.getElementById("result").value = totalhoras;
+
+                    horasrest = 102 - totalhoras;
+                    document.getElementById("hrest").value = horasrest;
+                }
+
+
+
+            </script>
+        </body>
+    </html>
